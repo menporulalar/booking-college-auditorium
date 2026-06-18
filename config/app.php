@@ -2,8 +2,9 @@
 
 // Application
 define('APP_NAME', 'Auditorium Booking');
-define('APP_URL', 'http://localhost:8000');
-//define('APP_URL', 'http://your-college-domain.edu/auditorium-booking/public');
+$appUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http')
+    . '://' . ($_SERVER['HTTP_HOST'] ?? 'localhost:8081');
+define('APP_URL', $appUrl);
 define('APP_ENV', 'development'); // 'production' in prod
 
 // Session
