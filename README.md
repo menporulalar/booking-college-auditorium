@@ -34,6 +34,12 @@ A PHP + MySQL web app for booking, managing, and reporting on college auditorium
 
 ## Notes for developers
 
+- Port 8000 may already be in use on some machines; `php -S localhost:8081 -t public` works as an alternate.
 - Entry point is `public/index.php`.
 - Views are in `views/`; shared layout files are in `views/layouts/`.
 - Report exports require TCPDF and PhpSpreadsheet. Keep Composer lock/`vendor/` in sync via `composer install --no-dev`.
+
+## Test accounts
+
+- `admin@college.edu` — `Admin@1234`
+- `staff@college.edu` — `Staff@1234`
