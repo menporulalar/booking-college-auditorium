@@ -5,7 +5,7 @@ $activePage = 'auditoriums';
 require_once __DIR__ . '/../../../config/app.php';
 require_once __DIR__ . '/../../../app/Helpers/Auth.php';
 Auth::startSession();
-include __DIR__ . '/../../layouts/admin-header.php';
+include __DIR__ . '/../../../layouts/admin-header.php';
 
 // Merge old POST values for re-population
 $val = function(string $key, $default = '') use ($old) {
@@ -242,4 +242,4 @@ window.addEventListener('resize', adjustLayout);
 adjustLayout();
 </script>
 
-<?php include __DIR__ . '/../../layouts/admin-footer.php'; ?>
+<?php include __DIR__ . '/../../../layouts/admin-footer.php'; ?>
