@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+# Protect config and SQL files
+<FilesMatch "\.(env|sql|log|json|lock|dist|bak)$">
+  Require all denied
+</FilesMatch>
+
+# Uploads — don’t execute PHP
+<Directory "public/uploads">
+  <FilesMatch "\.php$">
+    Require all denied
+  </FilesMatch>
+</Directory>

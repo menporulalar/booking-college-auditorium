@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archives / docs not needed in repo
+*.zip
+*.docx
+*.doc
+docs/
+
+# PHP vendor per-module
+module*/vendor/
+!module10/vendor/
+# If you want vendor tracked for module10 only, keep that line above.
+# If you prefer no vendor at all, replace the block above with:
+# module*/vendor/
+
+# IDE / editor
+.vscode/
+.idea/
+*~
+*.swp
+*.swo
