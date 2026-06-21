@@ -15,9 +15,13 @@ A PHP + MySQL web app for booking, managing, and reporting on college auditorium
    ```bash
    composer install
    ```
-3. Import the base schema:
+3. Import the schema and seed data (all parts are required):
    ```bash
    mysql -u root -p auditorium_booking < database.sql
+   mysql -u root -p auditorium_booking < database_m2.sql
+   mysql -u root -p auditorium_booking < database_m3.sql
+   mysql -u root -p auditorium_booking < database_m9.sql
+   mysql -u root -p auditorium_booking < database_m10.sql
    ```
 4. Adjust app settings as needed in `config/app.php` and `config/database.php`.
 5. Start the built-in PHP server:

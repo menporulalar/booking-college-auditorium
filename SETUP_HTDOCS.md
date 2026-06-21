@@ -46,20 +46,30 @@ Restart Apache from the XAMPP control panel after saving.
 
 Start MySQL and Apache in the XAMPP control panel before proceeding.
 
-## 4. Create the database
+## Audrey Setup Steps
 
-**Option A: phpMyAdmin**
-1. Open `http://localhost/phpmyadmin`
-2. Create a new database named `auditorium_booking`
-3. Select the database, go to the **Import** tab, and upload `database.sql`
+1. Install Xampp or Mamp or any php mysql server for your os
+2. Clone download zip of the repository and place the project folder inside XAMP's htdocs directory :
+   cp -R booking-college-auditorium C:/xampp/htdocs/
+3. create a database named : auditorium_booking
+4. import base database schema and seed data (all database files required) using below mentioned order:
+	mysql -u root -p auditorium_booking < database.sql
+	mysql -u root -p auditorium_booking < database_m2.sql
+	mysql -u root -p auditorium_booking < database_m3.sql
+	mysql -u root -p auditorium_booking < database_m9.sql
+	mysql -u root -p auditorium_booking < database_m10.sql
+5. Start xampp : start apache and mysql
+6. Open the app in browser
+   Visit the project URL in your browser: http://localhost/booking-college-auditorium/public/login
 
-**Option B: Command line**
-```bash
-/opt/lampp/bin/mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS auditorium_booking CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
-/opt/lampp/bin/mysql -u root -p auditorium_booking < /opt/lampp/htdocs/booking-college-auditorium/database.sql
-```
+7. Log in with test accounts
 
-## 5. Configure the database connection
+Email                | Password  | Role
+--------------------|-----------|--------
+admin@college.edu    | Admin@1234| admin
+staff@college.edu    | Staff@1234| staff
+
+## 6. Configure the database connection
 
 Edit `config/database.php` inside your project folder with your XAMPP MySQL credentials:
 
@@ -89,20 +99,20 @@ composer install --no-dev
 
 If Composer is not installed, install it first or make sure `vendor/` is present from the repository.
 
-## 7. Open the app
+## 8. Open the app
 
 Visit the project URL in your browser:
 - `http://localhost/booking-college-auditorium/public/login`
 - Or use the folder name you chose in step 1
 
-## 8. Log in with test accounts
+## 9. Log in with test accounts
 
 | Email                | Password  | Role   |
 |----------------------|-----------|--------|
 | admin@college.edu    | Admin@1234| admin  |
 | staff@college.edu    | Staff@1234| staff  |
 
-## Troubleshooting
+## 10. Troubleshooting
 
 - **Redirects to `/login` with 404:** Make sure `.htaccess` is being read (check `AllowOverride All` in `httpd.conf`) and Apache has been restarted.
 - **Database connection error:** Verify MySQL is running in XAMPP and `config/database.php` credentials are correct.
