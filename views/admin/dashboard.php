@@ -19,7 +19,7 @@ $pendingCount  = Booking::pendingCount();
 $conflictCount = Booking::conflictCount();
 $todayCount    = Booking::todayCount();
 
-include __DIR__ . '/../../../layouts/admin-header.php';
+include __DIR__ . '/../layouts/admin-header.php';
 ?>
 
 <div class="page-header">

@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../../config/app.php';
 require_once __DIR__ . '/../../../app/Helpers/Auth.php';
 require_once __DIR__ . '/../../../app/Models/Booking.php';
 Auth::startSession();
-include __DIR__ . '/../../../layouts/admin-header.php';
+include __DIR__ . '/../../layouts/admin-header.php';
 
 $reportTabs = [
     'summary'       => ['label' => 'Booking Summary',     'icon' => 'list'],
@@ -388,4 +388,4 @@ $exportQuery = http_build_query(array_merge($filters, ['report' => $report]));
 
 <?php endif; ?>
 
-<?php include __DIR__ . '/../../../layouts/admin-footer.php'; ?>
+<?php include __DIR__ . '/../../layouts/admin-footer.php'; ?>

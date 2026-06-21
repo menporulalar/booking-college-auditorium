@@ -4,7 +4,7 @@ $activePage = 'auditoriums';
 require_once __DIR__ . '/../../../config/app.php';
 require_once __DIR__ . '/../../../app/Helpers/Auth.php';
 Auth::startSession();
-include __DIR__ . '/../../../layouts/admin-header.php';
+include __DIR__ . '/../../layouts/admin-header.php';
 ?>
 
 <!-- Page header -->
@@ -181,4 +181,4 @@ window.addEventListener('resize', adjustGrid);
 adjustGrid();
 </script>
 
-<?php include __DIR__ . '/../../../layouts/admin-footer.php'; ?>
+<?php include __DIR__ . '/../../layouts/admin-footer.php'; ?>
