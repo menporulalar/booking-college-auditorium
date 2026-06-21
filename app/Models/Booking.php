@@ -157,7 +157,7 @@ class Booking {
         $where  = "auditorium_id = ?
                    AND end_datetime > ?
                    AND start_datetime < ?
-                   AND status NOT IN ('cancelled','rejected')";
+                   AND b.status NOT IN ('cancelled','rejected')";
         if ($excludeId) { $where .= ' AND id != ?'; $params[] = $excludeId; }
 
         $stmt = getDB()->prepare(
